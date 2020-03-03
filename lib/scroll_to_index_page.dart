@@ -44,7 +44,10 @@ class ScrollToIndexPageState extends State<ScrollToIndexPage> {
     RenderBox renderBox = key.globalKey.currentContext.findRenderObject();
 
     ///获取位置偏移，基于 ancestor: SingleChildScrollView 的 RenderObject()
+    ///计算点以Offset.zero 计算，坐标系则不以屏幕为准，而是以父类 SingleChildScrollView的
+    ///renderBox为准 来进行计算。（要确保 ancestor必须是 子renderBox 的 父 widget才可以。）
     double dy = renderBox.localToGlobal(Offset.zero,ancestor: scrollKey.currentContext.findRenderObject()).dy;
+    print("dy : $dy      controller offset : ${controller.offset}");
 
     //计算真实偏移量
     var offset = dy + controller.offset;
