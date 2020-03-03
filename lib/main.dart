@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_scroll_demo/scroll_to_index_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ScrollToIndexPage(),
     );
   }
 }
